@@ -19,9 +19,12 @@ class HmoProvidersSeeder extends Seeder
         foreach ($providers as $provider)
         {
             PatientHmoProvider::query()->firstOrCreate([
-                'name'          => $provider,
-                'name_slug'     => Str::slug($provider),
-                'is_enabled'    => true
+                'name'                  => $provider,
+                'name_slug'             => Str::slug($provider),
+                'contact_person'        => 'Patrick W Policarpio',
+                'contact_person_phone'  => '09171234567',
+                'contact_person_email'  => 'patrick.policarpio@gmail.com',
+                'is_enabled'            => true
             ]);
         }
     }
