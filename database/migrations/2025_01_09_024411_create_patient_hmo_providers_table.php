@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('logo_src')->nullable();
+            $table->string('contact_person');
+            $table->string('contact_person_email');
+            $table->string('contact_person_phone');
             $table->boolean('is_enabled')->default(true);
             $table->timestamps();
         });

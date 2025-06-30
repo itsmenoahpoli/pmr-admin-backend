@@ -7,7 +7,6 @@ use App\Http\Controllers\Api\Users\UsersController;
 use App\Http\Controllers\Api\Users\UserRolesController;
 use App\Http\Controllers\Api\Users\UserSessionsController;
 use App\Http\Controllers\Api\DashboardStatisticsController;
-use App\Http\Controllers\Api\PaymentsController;
 use App\Http\Controllers\Api\Patients\PatientHmoProvidersController;
 use App\Http\Controllers\Api\Patients\PatientProfilesController;
 use App\Http\Controllers\Api\Patients\PatientHmosController;
@@ -32,13 +31,6 @@ Route::prefix('v1')->group(function() {
             Route::post('signout', [AuthController::class, 'signout'])->name('auth.signout');
             Route::get('my-sessions', [AuthController::class, 'mySessions'])->name('auth.my-sessions');
         });
-    });
-
-    /**
-     * Payment routes
-     */
-    Route::prefix('payments')->group(function() {
-        Route::apiResource('/', PaymentsController::class);
     });
 
     /**

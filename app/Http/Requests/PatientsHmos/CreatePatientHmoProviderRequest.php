@@ -24,7 +24,10 @@ class CreatePatientHmoProviderRequest extends FormRequest
         return [
             'name'          => 'string|required|unique:patient_hmo_providers',
             'logo_file'     => 'nullable|file:image',
-            'is_enabled'    => 'string|nullable'
+            'contact_person' => 'string|required',
+            'contact_person_email' => 'email|required',
+            'contact_person_phone' => 'string|required',
+            'is_enabled'    => 'boolean|nullable'
         ];
     }
 }

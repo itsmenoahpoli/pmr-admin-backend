@@ -26,10 +26,14 @@ class DashboardStatisticsService
         $recentLogins = $this->userSessionsService->getList(5);
 
         return [
-            'patient_hmo_providers'   => $hmoProvidersCount,
-            'patient_hmos'            => $patientHmosCount,
-            'patient_profiles'        => $patientProfilesCount,
-            'recent_logins'           => $recentLogins
+            'total_patient_profiles'            => $patientProfilesCount,
+            'total_patient_hmos'                => $patientHmosCount,
+            'total_hmo_providers'               => $hmoProvidersCount,
+            'total_staff_physical_therapists'   => 0,
+            'total_staff_clinic_doctors'        => 0,
+            'total_users'                       => 0,
+            'total_roles'                       => 0,
+            'recent_logins'                     => $recentLogins
         ];
     }
 }

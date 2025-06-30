@@ -28,6 +28,9 @@ class UpdatePatientHmoProviderRequest extends FormRequest
                 'string',
                 Rule::unique('patient_hmo_providers', 'name')->ignore($this->route('patient_hmo_provider')),
             ],
+            'contact_person' => 'string|required',
+            'contact_person_email' => 'email|required',
+            'contact_person_phone' => 'string|required',
             'is_enabled'    => 'boolean|nullable'
         ];
     }
